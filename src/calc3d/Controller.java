@@ -104,9 +104,11 @@ class Settings {
     }
     //Este metodo checa si el archivo ya existe, sino se va al metodo que crea el archivo.
     private void checkFile(){
+        File jarPath=new File(Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        String propertiesPath=jarPath.getParentFile().getAbsolutePath();
         Properties prop = new Properties();
         OutputStream output = null;
-        File calcProp = new File("calc3d.config");
+        File calcProp = new File(propertiesPath+"/calc3d.config");
         if(!calcProp.exists()) {
             try {
                 System.out.println("capos.properties doesn't exists!");
@@ -141,10 +143,12 @@ class Settings {
         }
     }
     private void loadData(){
+        File jarPath=new File(Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        String propertiesPath=jarPath.getParentFile().getAbsolutePath();
         Properties prop = new Properties();
 
         try{
-            prop.load(new FileInputStream("calc3d.config"));
+            prop.load(new FileInputStream(propertiesPath+"/calc3d.config"));
         }catch(Exception e){
             System.out.println("file not found.");
             e.printStackTrace();
