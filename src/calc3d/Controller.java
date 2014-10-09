@@ -167,11 +167,13 @@ class Settings {
         currency = prop.getProperty("currency");
     }
     public void setData(){
+        File jarPath=new File(Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        String propertiesPath=jarPath.getParentFile().getAbsolutePath();
         FileOutputStream out = null;
         Properties prop = new Properties();
 
         try{
-            out = new FileOutputStream("calc3d.config");
+            out = new FileOutputStream(propertiesPath+"/calc3d.config");
         }catch(Exception e){
             System.out.println("file not found.");
             e.printStackTrace();
