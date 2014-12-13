@@ -2,92 +2,52 @@
 
 <html>
 <head>
-  <title>Tono App</title>
+  <title>CALC3D</title>
 
-  <script src="bower_components/platform/platform.js"></script>
-
-  <link rel="import" href="bower_components/core-icons/core-icons.html">
-  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-  <link rel="import" href="bower_components/paper-input/paper-input.html">
-  <link rel="import" href="bower_components/core-menu/core-menu.html">
-  <link rel="import" href="bower_components/core-item/core-item.html">
-  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
-  <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
-
-  <link rel="import" href="bower_components/font-roboto/roboto.html">
-  <link rel="import" href="bower_components/paper-button/paper-button.html">
-  <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
-  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
-  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
-  <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body unresolved>
+<body>
 
-  <core-drawer-panel id="drawerPanel">
-
-    <core-header-panel drawer>
-      <core-toolbar id="navheader'">
-        <span>Menu</span>
-      </core-toolbar>
-      <core-menu>
-        <core-item label="Calculator"></core-item>
-        <core-item label="Settings"></core-item>
-      </core-menu>
-     </core-header-panel>
-
-    <core-header-panel main>
-      <core-toolbar id="mainheader">
-        <paper-icon-button
-          id="navicon" icon="menu"></paper-icon-button>
-        <span flex>CALC3D</span>
-      </core-toolbar>
-      <div class="content">
-        If drawer is hidden, press button to display drawer.
-
-
-  <section>
-    <p>A simple Polymer
-      <a href="http://www.polymer-project.org/docs/elements/paper-elements.html">
-      paper elements</a> example that demonstrates using <code>&lt;core-toolbar&gt;,
-      &lt;paper-button&gt;, &lt;paper-checkbox&gt;, &lt;paper-icon-button&gt;,
-      &lt;paper-fab&gt;, &lt;paper-tabs&gt;</code>, and <code>&lt;paper-toast&gt;</code>.
-    </p>
-    <paper-checkbox label="Got it!"></paper-checkbox>
-  </section>
-
-  <section>
-    <paper-tabs selected="0">
-      <paper-tab>Tab one</paper-tab>
-      <paper-tab>Tab two</paper-tab>
-      <paper-tab>Tab three</paper-tab>
-    </paper-tabs>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <paper-input label="Your Name"></paper-input>
-    </p>
-  </section>
-
-  <section>
-    <template id="toastGroup" is="auto-binding">
-      <paper-button raised right on-click="{{showToast}}">
-        Show Toast
-      </paper-button>
-      <paper-toast id="toast" text="It is working"></paper-toast>
-    </template>
-  </section>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">CALC3D</a>
+        </div>
       </div>
-    </core-header-panel>
+    </nav>
 
-  </core-drawer-panel>
+    <div class="container">
+      <h1>Calculator for your 3D Printer</h1>
+      <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Weight (Grams)</label>
+    <div class="col-sm-10">
+      <input id="weight" type="text" class="form-control" id="inputEmail3" placeholder="Weight">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Time (Hours)</label>
+    <div class="col-sm-10">
+      <input id="time" type="text" class="form-control" id="inputPassword3" placeholder="Time">
+    </div>
+  </div>
+  <div class="form-group calculate">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="bCalculate" type="submit" class="btn btn-default">Calculate</button>
+    </div>
+  </div>
+  <div class="form-group result">
+    <label for="inputPassword3" class="col-sm-2 control-label">Result</label>
+    <div class="col-sm-10">
+      <input id="result" type="text" class="form-control" id="inputPassword3" placeholder="Result" disabled>
+    </div>
+  </div>
+    </div><!-- /.container -->
 
-  <script src="main.js"></script>
-</body>
+    <script src="/bower_components/jquery/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    </body>
 </html>
