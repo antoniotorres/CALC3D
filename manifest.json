@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "CALC3D",
+  "permissions": [
+  "storage"
+  ],
+  "description": "A 3D Printing Calculator. With this tool you will be able to know the cost of your prints.",
+  "version": "0.1.1",
+  "minimum_chrome_version": "35",
+  "icons": {
+    "16": "assets/icon_16.png",
+    "128": "assets/icon_128.png"
+  },
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  }
+}

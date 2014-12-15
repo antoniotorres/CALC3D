@@ -1,0 +1,2 @@
+
+  $('.btn').button('complete')

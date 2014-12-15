@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>CALC3D</title>
+
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">CALC3D</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div id="collapse1" class="collapse in">
+        <h1>Calculator for your 3D Printer</h1>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Weight (Grams)</label>
+          <div class="col-sm-10">
+            <input id="weight" type="text" class="form-control" id="inputEmail3" placeholder="Weight">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Time (Hours)</label>
+          <div class="col-sm-10">
+            <input id="time" type="text" class="form-control" id="inputPassword3" placeholder="Time">
+          </div>
+        </div>
+        <div class="form-group calculate">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="bCalculate" class="btn btn-default">Calculate</button>
+          </div>
+        </div>
+        <div class="form-group result">
+          <label for="inputPassword3" class="col-sm-2 control-label">Result</label>
+          <div class="col-sm-10">
+            <input id="result" type="text" class="form-control" id="inputPassword3" placeholder="Result" disabled>
+          </div>
+        </div>
+      </div>
+      <button id="bSettings" class="btn btn-info" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">Settings</button>
+      <div id="collapse2">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Filament Spool Weight (Grams)</label>
+          <div class="col-sm-10">
+            <input id="f_weight" type="text" class="form-control" placeholder="Weight">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Filament Spool Cost</label>
+          <div class="col-sm-10">
+            <input id="f_cost" type="text" class="form-control" placeholder="Cost">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Electricity Cost ($/KWh)</label>
+          <div class="col-sm-10">
+            <input id="e_cost" type="text" class="form-control" placeholder="Cost">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">3D Printer Electricity Usage (Watts)</label>
+          <div class="col-sm-10">
+            <input id="e_use" type="text" class="form-control" placeholder="Usage">
+          </div>
+        </div>
+        <div class="form-group calculate">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="bSave" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+    <script src="/bower_components/jquery/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    </body>
+</html>

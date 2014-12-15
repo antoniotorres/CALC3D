@@ -1,0 +1,1 @@
+var old = jQuery.noConflict(true);
