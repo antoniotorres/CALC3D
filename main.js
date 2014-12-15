@@ -17,16 +17,12 @@ var v_eUse=0.0;
 
 //function to calculate the cost
 function calculate() {
+  sync();
   time = parseFloat(document.querySelector('#time').value);
   weight = parseFloat(document.getElementById('weight').value);
-  var costWatt = ( 2.917/1000.0)*360*time;
-  result.value = time+weight;
-  chrome.storage.sync.set({'filament_weight': weight}, function() {
-     message('Settings saved');
-  });
-  chrome.storage.sync.get("filament_weight", function (obj) {
-    console.log(obj);
-  });
+  var costWatt = ( v_eCost/1000.0)*v_eUse*time;
+  var costWeight = (v_fCost/v_fWeight)*weight
+  result.value = parseFloat(costWatt+costWeight).toFixed(2);
 }
 
 //This validates that the data posted are numbers only
@@ -69,16 +65,16 @@ function update() {
 }
 function sync() {
   chrome.storage.sync.get("filament_weight", function (obj) {
-    f=obj.filament_weight+'';
+    v_fWeight=obj.filament_weight+'';
   });
   chrome.storage.sync.get("filament_cost", function (obj) {
-    document.getElementById('f_cost').value=obj.filament_cost+'';
+    v_fCost=obj.filament_cost+'';
   });
   chrome.storage.sync.get("e_cost", function (obj) {
-    document.getElementById('e_cost').value=obj.e_cost+'';
+    v_eCost=obj.e_cost+'';
   });
   chrome.storage.sync.get("e_use", function (obj) {
-    document.getElementById('e_use').value=obj.e_use+'';
+    v_eUse=obj.e_use+'';
   });
 }
 
@@ -110,4 +106,5 @@ document.addEventListener('DOMContentLoaded', function() {
         validate(event);
     });
     update();
+    sync();
 });
