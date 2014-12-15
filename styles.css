@@ -1,9 +1,12 @@
 body {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 h1 {
   text-align: center;
 }
 .calculate {
   text-align: center;
+}
+#collapse2 {
+  padding-top:50px;
 }
